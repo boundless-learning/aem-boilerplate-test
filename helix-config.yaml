@@ -1,0 +1,29 @@
+version: 1
+
+definitions:
+  defaults:
+    - &defaultParams
+      repo: your-repo-name
+      ref: main
+
+local:
+  <<: *defaultParams
+
+preview:
+  <<: *defaultParams
+
+live:
+  <<: *defaultParams
+
+cors:
+  allowOrigin: "*" # For development. In production, specify exact domains
+  allowMethods:
+    - GET
+    - POST
+    - OPTIONS
+    - HEAD
+  allowHeaders:
+    - Authorization
+    - Content-Type
+  maxAge: 86400
+  allowCredentials: true
